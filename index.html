@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interacción con jQuery</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <style>
+        .container {
+            margin-top: 50px;
+        }
+        .btn {
+            margin: 10px;
+        }
+        img {
+            margin-top: 20px;
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center">
+        <h1 class="display-4" id="page-title">¡Mirá la siguiente imagen!</h1>
+        <div class="row justify-content-center mb-4">
+            <div class="col-auto">
+                <button class="btn btn-primary" id="hide-button">Ocultar Imagen</button>
+                <button class="btn btn-secondary" id="show-button">Mostrar Imagen</button>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8">
+                <img id="image" src="https://labyes.com/wp-content/uploads/2018/11/dreamstime_xl_74929292_baja-1024x683.jpg" alt="Imagen de ejemplo">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $('#hide-button').click(function(){
+                $('#image').hide();
+                $('#page-title').text('¡No tenemos ninguna imagen!');
+            });
+            $('#show-button').click(function(){
+                $('#image').show();
+                $('#page-title').text('¡Mirá la siguiente imagen!');
+            });
+        });
+    </script>
+</body>
+</html>
